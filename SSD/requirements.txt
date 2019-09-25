@@ -1,0 +1,8 @@
+torch
+torchvision
+yacs
+tqdm
+opencv-python
+vizer
+tensorboardX
+scikit-learn
