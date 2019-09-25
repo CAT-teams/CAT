@@ -25,11 +25,11 @@ To run this code on detection task you need to [download](https://www.kaggle.com
 
 ### Classification
 
-python main.py --data <ILSVRC2012 folder location> --model <Model name (resnet18 / resnet34 / resnet50 / mobilenet_v2)>  --actBitwidth <Bits for main principal component> --weightBitwidth <8/32>  --clip --method <compression \ entropy> --regul <Lambda value>
+python main.py --data < ILSVRC2012 folder location > --model < Model name (resnet18 / resnet34 / resnet50 / mobilenet_v2) >  --actBitwidth < Bits for main principal component > --weightBitwidth < 8/32 >  --clip --method < compression \ entropy > --regul < Lambda value >
 
 ### Detection
 
-VOC_ROOT=<PASCAL VOC folder location> NGPUS=<Number of Gpus> python -m torch.distributed.launch --nproc_per_node=2 SSD/train_entropy.py --config-file SSD/configs/vgg_ssd512_voc0712.yaml --ckpt SSD/vgg_ssd512_voc0712.pth --regul 0.08 MODEL.BACKBONE.PRETRAINED False SOLVER.BATCH_SIZE 2 TEST.BATCH_SIZE 8 SOLVER.MAX_ITER 160000 OUTPUT_DIR SSD/outputs/vgg_ssd512_voc0712_84bit_reg008
+VOC_ROOT= <PASCAL VOC folder location > NGPUS=< Number of Gpus > python -m torch.distributed.launch --nproc_per_node=2 SSD/train_entropy.py --config-file SSD/configs/vgg_ssd512_voc0712.yaml --ckpt SSD/vgg_ssd512_voc0712.pth --regul 0.08 MODEL.BACKBONE.PRETRAINED False SOLVER.BATCH_SIZE 2 TEST.BATCH_SIZE 8 SOLVER.MAX_ITER 160000 OUTPUT_DIR SSD/outputs/vgg_ssd512_voc0712_84bit_reg008
   
 * For more details: our code is based on https://github.com/lufficc/SSD
 
