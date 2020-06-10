@@ -25,7 +25,7 @@ To run this code on detection task you need to [download](https://www.kaggle.com
 
 ### Classification
 
-python main.py --data < ILSVRC2012 folder location > --model < Model name (resnet18 / resnet34 / resnet50 / mobilenet_v2) >  --actBitwidth < Bits for main principal component > --weightBitwidth < 8/32 >  --clip --method < compression \ entropy > --regul < Lambda value >
+python main.py --data < ILSVRC2012 folder location > --model < Model name (resnet18 / resnet34 / resnet50 / mobilenet_v2) >  --actBitwidth < Bits for main principal component > --weightBitwidth < 8/32 >  --clip --method < compression \ entropy > --regul < Lambda value for activations > --regul2 < Lambda value for weights >
 
 ### Detection
 
