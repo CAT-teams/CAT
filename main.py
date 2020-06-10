@@ -58,6 +58,7 @@ def parseArgs():
     parser.add_argument('--schedule', type=int, nargs='+', default=[21, 35],
                         help='Decrease learning rate at these epochs.')
     parser.add_argument('--regul', type=float, default=0, help='Regularization strength')
+	parser.add_argument('--regul2', type=float, default=0, help='Regularization strength')
     parser.add_argument('--temp', type=float, default=-10, help='soft entropy temperature')
     parser.add_argument('--tempAnneal', type=float, default=1, help='soft entropy temperature annealing')
     parser.add_argument('--method', type=str, default='entropy',
@@ -233,7 +234,7 @@ if __name__ == '__main__':
 
             if not args.onlyInference:
                 out = runTrain(model, args, trainLoader, epoch, optimizer, criterion, logging, layer)
-                trainTotalLoss, trainCELoss, trainparamLoss, trainTop1, trainTop5 = out
+                trainTotalLoss, trainCELoss, trainparamLoss, trainparamLoss2,trainTop1, trainTop5 = out
 
             out = runTest(model, args, testLoader, epoch, criterion, logging)
             testTop1, testTop5, entropy, = out
